@@ -7,23 +7,56 @@
 			<li Class="CombatExtended.PatchOperationFindMod">
 				<modName>AnimalCollabProj</modName>
 			</li>
-		<li Class="PatchOperationReplace">
-			<xpath>*/ThingDef[@Name="ACPAngoraRabbit"]/statBases/MoveSpeed</xpath>
-			<value>
-				<MoveSpeed>4.3</MoveSpeed>
-				<MeleeDodgeChance>0.24</MeleeDodgeChance>
-				<MeleeCritChance>0.02</MeleeCritChance>
-				<BaseBodySize>0.57</BaseBodySize>
-			</value>
-		</li>
-		<li Class="PatchOperationAddModExtension">
-			<xpath>*/ThingDef[@Name="ACPAngoraRabbit"]</xpath>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef["ACPAngoraRabbit"]/statBases/MoveSpeed</xpath>
 				<value>
-					<li Class="CombatExtended.RacePropertiesExtensionCE">
-					<bodyShape>QuadrupedLow</bodyShape>
-					</li>
+					<MoveSpeed>4.3</MoveSpeed>
+					<MeleeDodgeChance>0.24</MeleeDodgeChance>
+					<MeleeCritChance>0.02</MeleeCritChance>
 				</value>
-		</li>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>*/ThingDef["ACPAngoraRabbit"]</xpath>
+					<value>
+						<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>QuadrupedLow</bodyShape>
+						</li>
+					</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef["ACPAngoraRabbit"]/race/baseBodySize</xpath>
+				<value>
+					<baseBodySize>0.15</baseBodySize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+			<xpath>*/ThingDef["ACPAngoraRabbit"]/verbs</xpath>
+				<value>
+					<verbs>
+						<li Class="CombatExtended.VerbPropertiesCE">
+						<verbClass>CombatExtended.Verb_MeleeAttackCE</verbClass>
+						<defaultCooldownTime>1.65</defaultCooldownTime>
+						<meleeDamageBaseAmount>2.7</meleeDamageBaseAmount>
+						<meleeDamageDef>Bite</meleeDamageDef>
+						<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.VerbPropertiesCE">
+						<verbClass>CombatExtended.Verb_MeleeAttackCE</verbClass>
+						<defaultCooldownTime>1.85</defaultCooldownTime>
+						<meleeDamageBaseAmount>1</meleeDamageBaseAmount>
+						<meleeDamageDef>Scratch</meleeDamageDef>
+						<linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.VerbPropertiesCE">
+						<verbClass>CombatExtended.Verb_MeleeAttackCE</verbClass>
+						<defaultCooldownTime>1.85</defaultCooldownTime>
+						<meleeDamageBaseAmount>1</meleeDamageBaseAmount>
+						<meleeDamageDef>Scratch</meleeDamageDef>
+						<linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+						</li>
+					</verbs>
+				</value>
+			</li>
 		</operations>
 	</Operation>
 </Patch>
