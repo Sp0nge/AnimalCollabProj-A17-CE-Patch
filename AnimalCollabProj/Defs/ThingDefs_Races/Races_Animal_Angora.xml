@@ -7,23 +7,23 @@
 			<li Class="CombatExtended.PatchOperationFindMod">
 				<modName>AnimalCollabProj</modName>
 			</li>
-		<Operation Class="PatchOperationReplace">
-			<xpath>*/Defs/ThingDefs_Races[@Name="ACPAngoraRabbit"]</xpath>
+		<li Class="PatchOperationReplace">
+			<xpath>*/ThingDef[@Name="ACPAngoraRabbit"]/statBases/MoveSpeed</xpath>
 			<value>
 				<MoveSpeed>4.3</MoveSpeed>
 				<MeleeDodgeChance>0.24</MeleeDodgeChance>
 				<MeleeCritChance>0.02</MeleeCritChance>
 				<BaseBodySize>0.57</BaseBodySize>
 			</value>
-		</Operation>
-		<Operation Class="PatchOperationAddModExtension">
-			<xpath>*/Defs/ThingDefs_Races[defName="ACPAngoraRabbit"]</xpath>
+		</li>
+		<li Class="PatchOperationAddModExtension">
+			<xpath>*/ThingDef[@Name="ACPAngoraRabbit"]</xpath>
 				<value>
 					<li Class="CombatExtended.RacePropertiesExtensionCE">
 					<bodyShape>QuadrupedLow</bodyShape>
 					</li>
 				</value>
-		</Operation>
+		</li>
 		</operations>
 	</Operation>
 </Patch>
