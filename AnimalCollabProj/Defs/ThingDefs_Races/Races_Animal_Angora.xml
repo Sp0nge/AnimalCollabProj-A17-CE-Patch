@@ -8,7 +8,7 @@
 				<modName>AnimalCollabProj</modName>
 			</li>
 			<li Class="PatchOperationReplace">
-				<xpath>*/ThingDef["ACPAngoraRabbit"]/statBases/MoveSpeed</xpath>
+				<xpath>*/ThingDef[defName="ACPAngoraRabbit"]/statBases/MoveSpeed</xpath>
 				<value>
 					<MoveSpeed>4.3</MoveSpeed>
 					<MeleeDodgeChance>0.24</MeleeDodgeChance>
@@ -16,7 +16,7 @@
 				</value>
 			</li>
 			<li Class="PatchOperationAddModExtension">
-				<xpath>*/ThingDef["ACPAngoraRabbit"]</xpath>
+				<xpath>*/ThingDef[defName="ACPAngoraRabbit"]</xpath>
 					<value>
 						<li Class="CombatExtended.RacePropertiesExtensionCE">
 						<bodyShape>QuadrupedLow</bodyShape>
@@ -24,19 +24,19 @@
 					</value>
 			</li>
 			<li Class="PatchOperationReplace">
-				<xpath>*/ThingDef["ACPAngoraRabbit"]/race/baseBodySize</xpath>
+				<xpath>*/ThingDef[defName="ACPAngoraRabbit"]/race/baseBodySize</xpath>
 				<value>
 					<baseBodySize>0.15</baseBodySize>
 				</value>
 			</li>
 			<li Class="PatchOperationReplace">
-			<xpath>*/ThingDef["ACPAngoraRabbit"]/verbs</xpath>
+			<xpath>*/ThingDef[defName="ACPAngoraRabbit"]/verbs</xpath>
 				<value>
 					<verbs>
 						<li Class="CombatExtended.VerbPropertiesCE">
 						<verbClass>CombatExtended.Verb_MeleeAttackCE</verbClass>
 						<defaultCooldownTime>1.65</defaultCooldownTime>
-						<meleeDamageBaseAmount>2.7</meleeDamageBaseAmount>
+						<meleeDamageBaseAmount>3</meleeDamageBaseAmount>
 						<meleeDamageDef>Bite</meleeDamageDef>
 						<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
 						</li>
