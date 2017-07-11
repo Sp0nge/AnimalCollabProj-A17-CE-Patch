@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="CombatExtended.PatchOperationFindMod">
+				<modName>AnimalCollabProj</modName>
+			</li>
+		<Operation Class="PatchOperationReplace">
+			<xpath>*/Defs/ThingDefs_Races[@Name="ACPAngoraRabbit"]</xpath>
+			<value>
+				<MoveSpeed>4.3</MoveSpeed>
+				<MeleeDodgeChance>0.24</MeleeDodgeChance>
+				<MeleeCritChance>0.02</MeleeCritChance>
+				<BaseBodySize>0.57</BaseBodySize>
+			</value>
+		</Operation>
+		<Operation Class="PatchOperationAddModExtension">
+			<xpath>*/Defs/ThingDefs_Races[defName="ACPAngoraRabbit"]</xpath>
+				<value>
+					<li Class="CombatExtended.RacePropertiesExtensionCE">
+					<bodyShape>QuadrupedLow</bodyShape>
+					</li>
+				</value>
+		</Operation>
+		</operations>
+	</Operation>
+</Patch>
