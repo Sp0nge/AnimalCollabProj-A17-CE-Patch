@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="CombatExtended.PatchOperationFindMod">
+				<modName>AnimalCollabProj</modName>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName="ACPBlackRhinoceros"]/statBases/MoveSpeed</xpath>
+				<value>
+					<MoveSpeed>5.5</MoveSpeed>
+					<MeleeDodgeChance>0.10</MeleeDodgeChance>
+					<MeleeCritChance>0.27</MeleeCritChance>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>*/ThingDef[defName="ACPBlackRhinoceros"]</xpath>
+					<value>
+						<li Class="CombatExtended.RacePropertiesExtensionCE">
+						<bodyShape>Quadruped</bodyShape>
+						</li>
+					</value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>*/ThingDef[defName="ACPBlackRhinoceros"]/race/baseBodySize</xpath>
+				<value>
+					<baseBodySize>2.1</baseBodySize>
+				</value>
+			</li>
+			<li Class="PatchOperationReplace">
+			<xpath>*/ThingDef[defName="ACPBlackRhinoceros"]/verbs</xpath>
+				<value>
+					<verbs>
+						<li Class="CombatExtended.VerbPropertiesCE">
+						<verbClass>CombatExtended.Verb_MeleeAttackCE</verbClass>
+						<defaultCooldownTime>1.25</defaultCooldownTime>
+						<meleeDamageBaseAmount>15</meleeDamageBaseAmount>
+						<meleeDamageDef>Scratch</meleeDamageDef>
+						<linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.VerbPropertiesCE">
+						<verbClass>CombatExtended.Verb_MeleeAttackCE</verbClass>
+						<defaultCooldownTime>1.05</defaultCooldownTime>
+						<meleeDamageBaseAmount>17</meleeDamageBaseAmount>
+						<meleeDamageDef>Blunt</meleeDamageDef>
+						<linkedBodyPartsGroup>HornAttackTool</linkedBodyPartsGroup>
+						</li>
+						<li Class="CombatExtended.VerbPropertiesCE">
+						<verbClass>CombatExtended.Verb_MeleeAttackCE</verbClass>
+						<defaultCooldownTime>1.65</defaultCooldownTime>
+						<meleeDamageBaseAmount>9</meleeDamageBaseAmount>
+						<meleeDamageDef>Blunt</meleeDamageDef>
+						<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+						</li>
+					</verbs>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>
